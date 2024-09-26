@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gustavo Barreto",
+      "username": "barreto@email.com",
+      "password": "barreto123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ikd1c3Rhdm8gQmFycmV0byIsInVzZXJuYW1lIjoiYmFycmV0b0BlbWFpbC5jb20iLCJpYXQiOjE2ODY0MjIyMTh9.bGizRYF2qlbevHrjY43YZ-8A3UmoZDf7PcjJHqIWQ74"
+    }
+  ],
+  "auth": [],
+  "schedules": [
+    {
+      "id": 0,
+      "patientName": "João Silva",
+      "professionalName": "Dr. Mario",
+      "dateTime": "26/09/2024 08:00",
+      "specialty": "Cardiologia"
+    }
+  ],
+  "specialtiesList": [
+    { "value": 0, "label": "Cardiologia" },
+    { "value": 1, "label": "Dermatologia" },
+    { "value": 2, "label": "Ginecologia" },
+    { "value": 3, "label": "Pediatria" },
+    { "value": 4, "label": "Ortopedia" },
+    { "value": 5, "label": "Oftalmologia" },
+    { "value": 6, "label": "Radiologia" },
+    { "value": 7, "label": "Neurologia" },
+    { "value": 8, "label": "Endocrinologia" },
+    { "value": 9, "label": "Oncologia" },
+    { "value": 10, "label": "Psiquiatria" },
+    { "value": 11, "label": "Urologia" },
+    { "value": 12, "label": "Nefrologia" },
+    { "value": 13, "label": "Pneumologia" },
+    { "value": 14, "label": "Otorrinolaringologia" },
+    { "value": 15, "label": "Nutrição" }
+  ]
+}

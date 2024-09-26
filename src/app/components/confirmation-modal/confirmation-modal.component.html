@@ -1,0 +1,13 @@
+<div>
+  <mat-dialog-content class="py-4">
+    <h2 class="text-lg font-semibold mb-2">Confirmar exclusão</h2>
+    <p>Deseja realmente excluir o agendamento?</p>
+  </mat-dialog-content>
+
+  <div class="flex justify-end mt-4">
+    <mat-dialog-actions>
+      <button mat-button color="warn" (click)="dialogRef.close(false)">Cancelar</button>
+      <button mat-button color="primary" (click)="dialogRef.close(true)">Excluir</button>
+    </mat-dialog-actions>
+  </div>
+</div>

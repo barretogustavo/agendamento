@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<div class="w-full bg-white">
+  <div class="p-6">
+    <div class="flex flex-col md:flex-row justify-between mb-10">
+      <h1 class="text-2xl font-bold mb-4">Visualizar agendamento</h1>
+      <button mat-raised-button color="primary" routerLink="/edit">Editar agendamento</button>
+    </div>
+    <div class="p-6 border-solid border-2 border-600 rounded-2xl">
+      <div *ngIf="schedule$ | async as schedule" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <strong>Nome do paciente:</strong>
+          <p>{{ schedule.patientName }}</p>
+        </div>
+        <div>
+          <strong>Nome do profissional:</strong>
+          <p>{{ schedule.professionalName }}</p>
+        </div>
+        <div>
+          <strong>Data e hora</strong>
+          <p>{{ schedule.dateTime }}</p>
+        </div>
+        <div>
+          <strong>Especialidade:</strong>
+          <p>{{ schedule.specialty }}</p>
+        </div>
+      </div>
+      <div class="flex justify-end mt-4">
+        <button mat-raised-button color="primary" routerLink="/home">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>

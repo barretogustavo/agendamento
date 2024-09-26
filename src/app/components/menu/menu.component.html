@@ -1,0 +1,15 @@
+<mat-toolbar
+  class="flex justify-between items-center border-b border-solid bg-white"
+>
+  <div class="ml-4">
+    <a mat-list-item routerLink="/home" routerLinkActive="active">
+      UVA agendamento médico
+    </a>
+  </div>
+  <a class="ml-2 cursor-pointer" mat-list-item (click)="logout()">
+    <div class="flex items-center">
+      <mat-icon mat-list-icon color="warn">exit_to_app</mat-icon>
+      <span class="ml-2 text-red-600">Sair</span>
+    </div>
+  </a>
+</mat-toolbar>

@@ -1,0 +1,69 @@
+<app-menu></app-menu>
+<div class="w-full p-6 bg-white">
+  <div class="flex flex-col md:flex-row justify-between mb-10">
+    <h1 class="text-2xl font-bold mb-4">{{ isEditMode ? "Editar" : "Criar" }} agendamento</h1>
+    <button
+      mat-raised-button
+      type="button"
+      color="warn"
+      routerLink="/create"
+      *ngIf="isEditMode"
+      (click)="openConfirmationModal(schedule.id, $event)"
+    >
+      Excluir
+    </button>
+  </div>
+
+  <form [formGroup]="createSchedule.form">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+      <mat-form-field class="w-full">
+        <mat-label>Nome do paciente</mat-label>
+        <input matInput type="text" formControlName="patientName" required />
+        <mat-error>O nome do paciente é obrigatório</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Nome do profissional</mat-label>
+        <input matInput type="text" formControlName="professionalName" required />
+        <mat-error>O nome do profissional é obrigatório</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+      <mat-form-field class="w-full">
+        <mat-label>Especialidade</mat-label>
+        <mat-select formControlName="specialty" required>
+          <mat-option *ngFor="let specialty of specialtiesList" [value]="specialty.label">{{
+            specialty.label
+          }}</mat-option>
+        </mat-select>
+        <mat-error>Especialidade é obrigatório</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Data e hora (DD/MM/YYYY HH:mm)</mat-label>
+        <input matInput type="text" formControlName="dateTime" (input)="formatDateTime()" maxlength="16" />
+
+        <mat-error *ngIf="createSchedule.form.get('dateTime')?.hasError('required')">
+          Data e hora são obrigatórios
+        </mat-error>
+        <mat-error *ngIf="createSchedule.form.get('dateTime')?.hasError('pattern')">
+          Formato inválido. Use DD/MM/YYYY HH:mm
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="flex justify-end mt-4">
+      <button mat-raised-button color="secondary" type="button" class="mr-6" routerLink="/home">Cancelar</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        [disabled]="!createSchedule.valid"
+        (click)="createSchedule.submitForm(isEditMode)"
+      >
+        {{ isEditMode ? "Atualizar" : "Criar" }}
+      </button>
+    </div>
+  </form>
+</div>
